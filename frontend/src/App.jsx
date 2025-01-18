@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import LoginButton from './auth0/login'
 import LogoutButton from './auth0/logout'
-import SwitchPovBtn from './components/SwitchPovBtn'
+import SwitchPovBtn from './components/PromptButton'
 import "./output.css"
 
 function App() {

@@ -5,8 +5,13 @@ export default {
     "./index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'light-grey': '#E1CCCF',
+      },
+    },
   },
   plugins: [],
+
 }
 
