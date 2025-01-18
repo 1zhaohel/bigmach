@@ -40,7 +40,7 @@ function App() {
       <LogoutButton />
 
       <p></p>
-      <SidebarLink text={"switch pov"} onClick={() => console.log("hello ;D")}> </SidebarLink>
+      <SidebarLink text={"draft text message"} onClick={() => console.log("this is your text")}> </SidebarLink>
 
       <InfoButton></InfoButton>
 

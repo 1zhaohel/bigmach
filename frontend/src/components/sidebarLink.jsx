@@ -2,7 +2,7 @@ const SidebarLink = ({ text, onClick }) => {
     return (
       <button
         onClick={onClick}
-        className="text-mediumGray bold text-sm font-bold leading-normal border-none outline-none"
+        className="text-gray1 font-bold leading-normal border-none outline-none"
       >
         {text}
       </button>

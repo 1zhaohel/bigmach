@@ -1,20 +1,23 @@
 import { Tooltip, Typography } from "@material-tailwind/react";
- 
+
 export default function InfoButton() {
   return (
     <Tooltip
       content={
-        <div className="w-80">
-          <Typography color="white" className="font-medium">
-            Material Tailwind
+        <div className="w-80 bg-white p-2 rounded shadow-md">
+          <Typography color="black" className="font-bold">
+            Choose your therapist!
           </Typography>
           <Typography
             variant="small"
-            color="white"
+            color="black"
             className="font-normal opacity-80"
           >
-            Material Tailwind is an easy to use components library for Tailwind
-            CSS and Material Design.
+            Joe is a logical and solution-oriented guy.
+            Bob is a idk idk idk.
+            
+            Chloe is a nice friend.
+
           </Typography>
         </div>
       }
