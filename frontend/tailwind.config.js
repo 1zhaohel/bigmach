@@ -4,6 +4,12 @@ export default {
   theme: {
     extend: {},
   },
+  colors: {
+    mediumGray: '#534F4F', 
+  },
+  fontFamily: {
+    gotham: ['Gotham', 'sans-serif'], 
+  },
   plugins: [],
 }
 

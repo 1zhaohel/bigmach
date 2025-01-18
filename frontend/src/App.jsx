@@ -2,6 +2,7 @@ import { useState } from 'react'
 import LoginButton from './auth0/login'
 import './App.css'
 import LogoutButton from './auth0/logout'
+import SidebarLink from './components/sidebarLink';
 
 
 function App() {
@@ -9,6 +10,9 @@ function App() {
 
   return (
     <>
+    <div>
+      <SidebarLink text="Home" onClick={() => alert('Home clicked!')} />
+    </div>
       <div>
         <a href="https://vite.dev" target="_blank">
         </a>
