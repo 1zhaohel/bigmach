@@ -27,4 +27,3 @@ dist-ssr
 
 # Enviromental Files (API Key)
 .env.local
-frontend/src/output.css
