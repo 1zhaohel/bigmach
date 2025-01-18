@@ -67,17 +67,17 @@ button:focus-visible {
   }
 }
 @font-face {
-    font-family: 'Gotham Black';
-    src: url('../fonts/Gotham-Black.otf') format('opentype');
+    font-family: 'Gotham Bold';
+    src: url('../fonts/Gotham-Bold.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
   
   @font-face {
     font-family: 'Gotham';
-    src: url('../fonts/Gotham-Bold.otf') format('opentype');
+    src: url('../fonts/Gotham-Book.otf') format('opentype');
     font-weight: normal;
-    font-style: bold;
+    font-style: normal;
   }
   
   @font-face {
@@ -102,7 +102,7 @@ button:focus-visible {
   }
   
   @font-face {
-    font-family: 'Gotham ThinItalic';
+    font-family: 'Gotham Thin';
     src: url('../fonts/Gotham-ThinItalic.otf') format('opentype');
     font-weight: normal;
     font-style: italic;
@@ -116,13 +116,12 @@ button:focus-visible {
   }
   
   @font-face {
-    font-family: 'Gotham XItalic';
-    src: url('../fonts/Gotham-XItalic.otf') format('opentype');
+    font-family: 'Gotham XLight';
+    src: url('../fonts/Gotham-XLightItalic.otf') format('opentype');
     font-weight: normal;
     font-style: italic;
   }
   
-
 
 @tailwind base;
 @tailwind components;
