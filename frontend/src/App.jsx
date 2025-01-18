@@ -3,6 +3,11 @@ import LoginButton from './auth0/login'
 import './App.css'
 import LogoutButton from './auth0/logout'
 
+<<<<<<< Updated upstream
+=======
+import "./output.css"
+import { TooltipWithHelperIcon } from './components/Tooltip'
+>>>>>>> Stashed changes
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,6 +35,15 @@ function App() {
 
       <LoginButton />
       <LogoutButton />
+<<<<<<< Updated upstream
+=======
+
+      <p></p>
+      <SidebarLink text={"switch pov"} onClick={() => console.log("hello ;D")}> </SidebarLink>
+      <p></p>
+      <TooltipWithHelperIcon></TooltipWithHelperIcon>
+
+>>>>>>> Stashed changes
     </>
   )
 }

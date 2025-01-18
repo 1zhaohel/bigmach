@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -66,3 +67,67 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+=======
+@font-face {
+    font-family: 'Gotham Black';
+    src: url('../fonts/Gotham-Black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/Gotham-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: bold;
+  }
+  
+  @font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/Gotham-BookItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Gotham Light';
+    src: url('../fonts/Gotham-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gotham Thin';
+    src: url('../fonts/Gotham-Thin.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gotham ThinItalic';
+    src: url('../fonts/Gotham-ThinItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Gotham XLight';
+    src: url('../fonts/Gotham-XLight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gotham XItalic';
+    src: url('../fonts/Gotham-XItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+>>>>>>> Stashed changes
