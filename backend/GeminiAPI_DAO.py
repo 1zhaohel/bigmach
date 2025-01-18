@@ -12,16 +12,27 @@ class GeminiAPI_DAO:
         # Initialize GeminiAI API
         genai.configure(api_key=self.gemini_api_key)
         self.model = genai.GenerativeModel("gemini-1.5-flash")
+        # Sets up chat conversation with empty chat history
+        self.chat = self.model.start_chat(
+            history=[]
+            )
         
 
     def prompt_AI(self, prompt: str):
-        response = self.model.generate_content(prompt)
-        print(response)
+        # Sends prompt to AI and prints response using streamlining
+        response = self.chat.send_message(prompt, stream=True)
+        for chunk in response:
+            print(chunk.text, end="")
+        
+        print(self.chat.history)
+
+
 
 # Defining main function
 def main():
     test = GeminiAPI_DAO()
     test.prompt_AI("Why is the sky blue?")
+    test.prompt_AI("Can you make it more consise?")
 
 
 # Using the special variable 
