@@ -17,7 +17,7 @@ function PromptButton( {btnText, btnCb} ) {
                 transition 
                 hover:shadow-xl
                 border-2
-                border-light-grey
+                border-gray2
                 "
         >
             {btnText}

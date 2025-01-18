@@ -4,6 +4,7 @@ import LogoutButton from './auth0/logout'
 import SwitchPovBtn from './components/PromptButton'
 import DropdownBtn from './components/DropdownBtn'
 import "./output.css"
+import TypingBox from './components/TypingBox'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,6 +31,7 @@ function App() {
       </p>
       <DropdownBtn />
       <SwitchPovBtn btnText={"switch pov"} btnCb={() => console.log("hello ;D")} />
+      <TypingBox receiver='mee!'/>
 
       <LoginButton />
       <LogoutButton />

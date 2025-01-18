@@ -7,10 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'light-grey': '#E1CCCF',
         gray1: '#534F4F',
+        gray2: '#E1CCCF',
         pink2: '#E7C1C6',
         pink3: '#D89CA4',
+        pink4: '#FFF5F6',
+        pink5: '#CF969D'
       }
     },
   },
