@@ -19,6 +19,18 @@ export default {
       }
     },
   },
+  fontFamily: {
+    fontBlack: ['black', 'sans-serif'], 
+    fontBold: ['bold', 'sans-serif'], 
+    fontExtrabold: ['extrabold', 'sans-serif'], 
+    fontExtralight: ['extralight', 'sans-serif'],
+    fontLight: ['light', 'sans-serif'],
+    fontMedium: ['medium', 'sans-serif'], 
+    fontRegular: ['regular', 'sans-serif'], 
+    fontSemibold: ['semibold', 'sans-serif'], 
+    fontThin: ['thin', 'sans-serif'], 
+},
   plugins: [],
+
 }
 
