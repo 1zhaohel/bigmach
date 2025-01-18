@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import LoginButton from './auth0/login'
-import './App.css'
 import LogoutButton from './auth0/logout'
-
+import SwitchPovBtn from './components/SwitchPovBtn'
+import DropdownBtn from './components/DropdownBtn'
+import Logo from './components/Logo'
 import "./output.css"
-// import { TooltipWithHelperIcon } from './components/Tooltip'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +29,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <DropdownBtn />
+      <SwitchPovBtn btnText={"switch pov"} btnCb={() => console.log("hello ;D")} />
 
       <LoginButton />
       <LogoutButton />
