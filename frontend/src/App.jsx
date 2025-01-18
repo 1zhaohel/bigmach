@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import LoginButton from './auth0/login'
 import LogoutButton from './auth0/logout'
-import SidebarLink from './components/sidebarLink';
-
 import SwitchPovBtn from './components/SwitchPovBtn'
 import DropdownBtn from './components/DropdownBtn'
+import SidebarLink from './components/SidebarLink';
+
 import "./output.css"
 
 function App() {
@@ -35,9 +35,12 @@ function App() {
       </p>
       <DropdownBtn />
       <SwitchPovBtn btnText={"switch pov"} btnCb={() => console.log("hello ;D")} />
-
       <LoginButton />
       <LogoutButton />
+
+      <p></p>
+      <SidebarLink text={"switch pov"} onClick={() => console.log("hello ;D")}> </SidebarLink>
+
     </>
   )
 }
