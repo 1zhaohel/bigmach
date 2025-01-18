@@ -1,6 +1,6 @@
 import { Tooltip, Typography } from "@material-tailwind/react";
  
-export function TooltipWithHelperIcon() {
+export default function InfoButton() {
   return (
     <Tooltip
       content={

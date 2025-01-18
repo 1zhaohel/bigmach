@@ -4,7 +4,7 @@ import LogoutButton from './auth0/logout'
 import SwitchPovBtn from './components/SwitchPovBtn'
 import DropdownBtn from './components/DropdownBtn'
 import SidebarLink from './components/SidebarLink';
-
+import InfoButton from './components/InfoButton';
 import Logo from './components/Logo'
 import "./output.css"
 
@@ -42,7 +42,7 @@ function App() {
       <p></p>
       <SidebarLink text={"switch pov"} onClick={() => console.log("hello ;D")}> </SidebarLink>
 
-      {/* <TooltipWithHelperIcon></TooltipWithHelperIcon> */}
+      <InfoButton></InfoButton>
 
  
       <div className="space-y-4 p-6">
