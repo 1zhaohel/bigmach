@@ -3,6 +3,7 @@ import LoginButton from './auth0/login'
 import LogoutButton from './auth0/logout'
 import SwitchPovBtn from './components/SwitchPovBtn'
 import DropdownBtn from './components/DropdownBtn'
+import Logo from './components/Logo'
 import "./output.css"
 
 function App() {
