@@ -9,6 +9,14 @@ import TypingBox from './components/TypingBox'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [reply, setReply] = useState('')
+  
+  // temp event handlers
+  const handleReplyChange = (e) => setReply(e.target.value)
+  const handleSubmit = (e) => {
+    console.log("hello :D")
+    e.preventDefault()
+  }
 
   return (
     <>
@@ -32,7 +40,7 @@ function App() {
       </p>
       <DropdownBtn />
       <SwitchPovBtn btnText={"switch pov"} btnCb={() => console.log("hello ;D")} />
-      <TypingBox receiver='mee!'/>
+      <TypingBox receiver='mee!' value={reply} handleReplyChange={handleReplyChange} handleSubmit={handleSubmit}/>
 
       <LoginButton />
       <LogoutButton />
