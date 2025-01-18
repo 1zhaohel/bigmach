@@ -12,7 +12,8 @@ export default {
         pink2: '#E7C1C6',
         pink3: '#D89CA4',
         pink4: '#FFF5F6',
-        pink5: '#CF969D'
+        pink5: '#CF969D',
+        pink6: '#FFECEF'
       }
     },
   },

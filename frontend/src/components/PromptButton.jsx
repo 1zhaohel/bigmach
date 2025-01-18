@@ -8,7 +8,7 @@ function PromptButton( {btnText, btnCb} ) {
                 items-center
                 text-center
                 rounded-2xl 
-                bg-pink-100 
+                bg-pink6
                 text-gray-600
                 text-lg 
                 font-light 
