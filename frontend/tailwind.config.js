@@ -2,10 +2,6 @@
 export default {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-<<<<<<< Updated upstream
-    extend: {},
-  },
-=======
     extend: {
       colors: {
         gray1: '#534F4F',
@@ -27,7 +23,6 @@ export default {
 
     gothamUltraItalic: ['Gotham UltraItalic', 'sans-serif'], 
 },
->>>>>>> Stashed changes
   plugins: [],
 }
 
