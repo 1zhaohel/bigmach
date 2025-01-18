@@ -18,3 +18,13 @@ class GeminiAPI_DAO:
         response = self.model.generate_content(prompt)
         print(response)
 
+# Defining main function
+def main():
+    test = GeminiAPI_DAO()
+    test.prompt_AI("Why is the sky blue?")
+
+
+# Using the special variable 
+# __name__
+if __name__=="__main__":
+    main()
