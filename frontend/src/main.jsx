@@ -19,3 +19,4 @@ root.render(
       </Auth0Provider>
   </StrictMode>
 );
+
