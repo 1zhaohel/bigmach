@@ -2,6 +2,7 @@ import { useState } from 'react'
 import LoginButton from './auth0/login'
 import LogoutButton from './auth0/logout'
 import SwitchPovBtn from './components/SwitchPovBtn'
+import DropdownBtn from './components/DropdownBtn'
 import "./output.css"
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <DropdownBtn />
       <SwitchPovBtn btnText={"switch pov"} btnCb={() => console.log("hello ;D")} />
 
       <LoginButton />
