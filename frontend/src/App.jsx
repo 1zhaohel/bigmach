@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import LoginButton from './auth0/login'
-import './App.css'
 import LogoutButton from './auth0/logout'
-
+import SwitchPovBtn from './components/SwitchPovBtn'
+import "./output.css"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,6 +27,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <SwitchPovBtn btnText={"switch pov"} btnCb={() => console.log("hello ;D")} />
 
       <LoginButton />
       <LogoutButton />
