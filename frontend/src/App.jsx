@@ -14,7 +14,8 @@ function App() {
   // temp event handlers
   const handleReplyChange = (e) => setReply(e.target.value)
   const handleSubmit = (e) => {
-    console.log("hello :D")
+    console.log(reply)
+    setReply("")
     e.preventDefault()
   }
 
