@@ -3,6 +3,8 @@ import LoginButton from './auth0/login'
 import LogoutButton from './auth0/logout'
 import SwitchPovBtn from './components/SwitchPovBtn'
 import DropdownBtn from './components/DropdownBtn'
+import SidebarLink from './components/SidebarLink';
+import InfoButton from './components/InfoButton';
 import Logo from './components/Logo'
 import "./output.css"
 
@@ -11,6 +13,9 @@ function App() {
 
   return (
     <>
+    <div>
+      <SidebarLink text="Home" onClick={() => alert('Home clicked!')} />
+    </div>
       <div>
         <a href="https://vite.dev" target="_blank">
         </a>
@@ -31,14 +36,13 @@ function App() {
       </p>
       <DropdownBtn />
       <SwitchPovBtn btnText={"switch pov"} btnCb={() => console.log("hello ;D")} />
-
       <LoginButton />
       <LogoutButton />
 
       <p></p>
-      {/* <SidebarLink text={"switch pov"} onClick={() => console.log("hello ;D")}> </SidebarLink> */}
-      <p></p>
-      {/* <TooltipWithHelperIcon></TooltipWithHelperIcon> */}
+      <SidebarLink text={"draft text message"} onClick={() => console.log("this is your text")}> </SidebarLink>
+
+      <InfoButton></InfoButton>
 
  
       <div className="space-y-4 p-6">
