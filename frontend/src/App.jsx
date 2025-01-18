@@ -5,6 +5,7 @@ import SwitchPovBtn from './components/SwitchPovBtn'
 import DropdownBtn from './components/DropdownBtn'
 import SidebarLink from './components/SidebarLink';
 
+import Logo from './components/Logo'
 import "./output.css"
 
 function App() {
@@ -41,7 +42,20 @@ function App() {
       <p></p>
       <SidebarLink text={"switch pov"} onClick={() => console.log("hello ;D")}> </SidebarLink>
 
-    </>
+      {/* <TooltipWithHelperIcon></TooltipWithHelperIcon> */}
+
+ 
+      <div className="space-y-4 p-6">
+      <p className="font-black text-xl">This is black font</p>
+      <p className="font-bold text-xl">This is bold font</p>
+      <p className="font-extrabold text-xl">This is extrabold font</p>
+      <p className="font-extralight text-xl">This is extralight font</p>
+      <p className="font-light text-xl">This is light font</p>
+      <p className="font-medium text-xl">This is medium font</p>
+      <p className="font-regular text-xl">This is regular font</p>
+      <p className="font-semibold text-xl">This is semibold font</p>
+      <p className="font-thin text-xl">This is thin font</p>
+    </div>    </>
   )
 }
 
