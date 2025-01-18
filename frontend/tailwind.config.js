@@ -13,11 +13,15 @@ export default {
     },
   },
   fontFamily: {
-    gotham: ['Gotham', 'sans-serif'], // has italic version 
-    gothamBlack: ['Gotham Bold', 'sans-serif'], // for titles?
-    gothamThin: ['Gotham Thin', 'sans-serif'],  //  has italic ver
-    gothamLight: ['Gotham Light', 'sans-serif'],
-    gothamXLight: ['Gotham XLight', 'sans-serif'], // has italic ver
+    fontBlack: ['black', 'sans-serif'], 
+    fontBold: ['bold', 'sans-serif'], 
+    fontExtrabold: ['extrabold', 'sans-serif'], 
+    fontExtralight: ['extralight', 'sans-serif'],
+    fontLight: ['light', 'sans-serif'],
+    fontMedium: ['medium', 'sans-serif'], 
+    fontRegular: ['regular', 'sans-serif'], 
+    fontSemibold: ['semibold', 'sans-serif'], 
+    fontThin: ['thin', 'sans-serif'], 
 },
   plugins: [],
 }
