@@ -5,7 +5,13 @@ export default {
     "./index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gray1: '#534F4F',
+        pink2: '#E7C1C6',
+        pink3: '#D89CA4',
+      }
+    },
   },
   plugins: [],
 }
