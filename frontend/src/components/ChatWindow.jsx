@@ -5,7 +5,7 @@ import { apiService } from "../apiService";
 
 // TODO: ChatWindow accepts JSON data from the AI's response and then formats it accordingly
 const ChatWindow = () => {
-  const [messages] = useState([
+  const [messages, setMessages] = useState([
     { user: "yiping", text: "Okay asduashdkjahsdka", type: "received" },
     { text: "I am being bullied and I feel sad", type: "sent" },
     {
@@ -40,9 +40,11 @@ const ChatWindow = () => {
     // Add the user's message to the chat window
     const newMessage = { text: userInput, type: "sent" };
     // setMessages((prevMessages) => [...prevMessages, newMessage]);
-    messages.push(newMessage);
+    // messages.push(newMessage);
 
-    console.log("Submitted text:", newMessage);
+    // console.log("Submitted text:", newMessage);
+    // setUserInput("");
+    setMessages((prevMessages) => [...prevMessages, newMessage]);
     setUserInput("");
 
     try {
@@ -53,8 +55,8 @@ const ChatWindow = () => {
       const botMessage = { text: response, type: "received" };
       console.log("Response:", response);
       // Add the backend response to the chat
-      // setMessages((prevMessages) => [...prevMessages, botMessage]);
-      messages.push(botMessage);
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
+      // messages.push(botMessage);
 
       console.log("Retrieved text:", botMessage);
 
