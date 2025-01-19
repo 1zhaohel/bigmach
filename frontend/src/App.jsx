@@ -6,6 +6,7 @@ import DropdownBtn from "./components/DropdownBtn";
 import Logo from "./components/Logo";
 import ChatWindow from "./components/ChatWindow";
 import SidebarLink from "./components/SidebarLink";
+import SidebarLink from "./components/SidebarLink";
 import InfoButton from "./components/InfoButton";
 import ToolboxModal from "./components/ToolboxModal";
 import "./output.css";
@@ -33,15 +34,20 @@ function App() {
   const handleClose = () => setOpen(false)
   const handleModeChange = (newMode) => setSelectedMode(newMode)
 
-  // const fetchResponse = async (prompt) => {
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve({user: "AI", text: "Echo: ${userInput}"});
-  //     }, 1000);
-  //   });
-  // };
+  const fetchResponse = async (prompt) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({user: "AI", text: "Echo: ${userInput}"});
+      }, 1000);
+    });
+  };
 
-  // const handleNewMessage = async (userInput) => {
+  const handleNewMessage = async (userInput) => {
+    // messages = [];
+    messages.push({text: userInput, type: "sent"});
+    const response = await fetchResponse(userInput);
+    messages.push(response);
+  }
     
     const action = (type) => {
       switch (type) {

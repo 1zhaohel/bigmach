@@ -46,7 +46,7 @@ class GeminiAPI_DAO:
         
 
     def prompt_AI(self, prompt: str):
-        # Sends prompt to AI and prints response using streamlining
+        # Sends prompt to AI and prints response using streamlining 
         response = self.chat.send_message(prompt)
         # for chunk in response:
         #     print(chunk.text, end="")
