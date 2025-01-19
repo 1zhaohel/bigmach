@@ -3,10 +3,10 @@ import { Menu } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 export default function DropdownBtn() {
-  const [selectedMode, setSelectedMode] = useState('Therapist'); 
+  const [selectedMode, setSelectedMode] = useState('therapist'); 
   const [menuItems, setMenuItems] = useState([
-    { label: 'Logical', value: 'Logical' },
-    { label: 'Emotional', value: 'Emotional' },
+    { label: 'logical', value: 'logical' },
+    { label: 'emotional', value: 'emotional' },
   ]); 
 
   const handleSelection = (selectedValue) => {
