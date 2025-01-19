@@ -34,7 +34,7 @@ class GeminiAPI_DAO:
             self.mode_setup += therapist_mode_setup
             # self.history = [{"role": "user", "parts": therapist_mode_setup},]
 
-        self.model = genai.GenerativeModel("gemini-1.5-flash", system_instruction=therapist_mode_setup)
+        self.model = genai.GenerativeModel("gemini-1.5-flash") #, system_instruction=therapist_mode_setup)
 
         # Initialize chat history based on therapist mode
         self.history = []
@@ -46,7 +46,7 @@ class GeminiAPI_DAO:
         
 
     def prompt_AI(self, prompt: str):
-        # Sends prompt to AI and prints response using streamlining 
+        # Sends prompt to AI and prints response using streamlining
         response = self.chat.send_message(prompt)
         # for chunk in response:
         #     print(chunk.text, end="")
