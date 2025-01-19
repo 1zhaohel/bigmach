@@ -40,7 +40,7 @@ function App() {
         </div>
         <ChatWindow />
       </div>
-      <div className="pb-10">
+      <div className="mb-1">
         <p className="italic text-sm text-center text-gray1">heart2heart is designed to provide general guidance and support. It is not a substitute for professional mental health care or advice. Your safety and well-being are of utmost importance.</p>
       </div>
     </div>
