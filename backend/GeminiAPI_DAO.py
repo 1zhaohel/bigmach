@@ -44,11 +44,12 @@ class GeminiAPI_DAO:
         else: # mode == "therapist"
             self.mode += self.therapist_mode_setup
             # self.history = [{"role": "user", "parts": therapist_mode_setup},]
-        self.history = [{"role": "user", "parts": self.mode},]
+        self.history += [{"role": "user", "parts": self.mode},]
 
     def prompt_AI(self, prompt: str):
         # Sends prompt to AI and prints response using streamlining
         response = self.chat.send_message(prompt)
+        self.history += [prompt]
         # for chunk in response:
         #     print(chunk.text, end="")
         # print(response.text)

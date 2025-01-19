@@ -26,6 +26,8 @@ def chat():
     response = test.prompt_AI(json_data["prompt"])
     response = jsonify(response)
 
+    test.print_chat_history()
+
     return response
 
 
