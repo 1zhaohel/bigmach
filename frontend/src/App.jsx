@@ -11,9 +11,14 @@ import ToolboxModal from "./components/ToolboxModal";
 import "./output.css";
 
 function App() {
-  const [count, setCount] = useState(0)
   const [reply, setReply] = useState('')
   const [isOpen, setOpen] = useState(false)
+
+  const [selectedMode, setSelectedMode] = useState('cameron');  
+  
+  // const handlePovClick = (pov) => {
+    
+  // }
   
   // temp event handlers
   const handleReplyChange = (e) => setReply(e.target.value)
@@ -24,6 +29,7 @@ function App() {
   }
 
   const handleClose = () => setOpen(false)
+  const handleModeChange = (newMode) => setSelectedMode(newMode)
 
   const [data, setData] = useState([{}])
 
@@ -61,7 +67,7 @@ function App() {
         <div className="flex flex-col space-y-4 w-1/6">
 
           <div className='flex items-center space-x-4'>
-            <DropdownBtn />
+            <DropdownBtn selectedMode={selectedMode} handleModeChange={handleModeChange}/>
             <InfoButton />
           </div>
         

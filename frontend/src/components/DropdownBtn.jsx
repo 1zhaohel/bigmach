@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Menu } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
-export default function DropdownBtn() {
-  const [selectedMode, setSelectedMode] = useState('cameron'); 
+export default function DropdownBtn({selectedMode, handleModeChange}) {
+  // const [selectedMode, setSelectedMode] = useState('cameron'); 
   const [menuItems, setMenuItems] = useState([
     { label: 'taylor', value: 'taylor' },
     { label: 'yiping', value: 'yiping' },
@@ -14,7 +14,7 @@ export default function DropdownBtn() {
       ...prevItems.filter((item) => item.value !== selectedValue),
       { label: selectedMode, value: selectedMode },
     ]);
-    setSelectedMode(selectedValue);
+    handleModeChange(selectedValue);
   };
 
   return (
