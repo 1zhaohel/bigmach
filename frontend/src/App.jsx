@@ -21,36 +21,28 @@ function App() {
   // }
   
   // temp event handlers
-  const handleReplyChange = (e) => setReply(e.target.value)
-  const handleSubmit = (e) => {
-    console.log(reply)
-    setReply("")
-    e.preventDefault()
-  }
+  // const handleReplyChange = (e) => setReply(e.target.value)
+
+  // const handleSubmit = (e) => {
+  //   console.log(reply)
+  //   setReply("")
+  //   e.preventDefault()
+  // }
 
   const handleClose = () => setOpen(false)
   const handleModeChange = (newMode) => setSelectedMode(newMode)
 
-  const [data, setData] = useState([{}])
+  // const fetchResponse = async (prompt) => {
+  //   return new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve({user: "AI", text: "Echo: ${userInput}"});
+  //     }, 1000);
+  //   });
+  // };
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:5000/chat", {
-        method: "POST",
-        body: JSON.stringify({"prompt": "hello, how are you"}),
-        headers: {
-          "Content-Type": "application/json",
-        }
-      }
-    ).then(
-      res => res.json()
-    ).then(
-      data => {
-        setData(data)
-        console.log(data)
-      }
-    )
-  }, [])
-  
+  // const handleNewMessage = async (userInput) => {
+    
+
 
   return (
     <div className="bg-pink1 h-screen w-screen flex flex-col">
