@@ -6,28 +6,17 @@ import { apiService } from "../apiService";
 // TODO: ChatWindow accepts JSON data from the AI's response and then formats it accordingly
 const ChatWindow = () => {
   const [messages, setMessages] = useState([
-    { user: "yiping", text: "Okay asduashdkjahsdka", type: "received" },
-    { text: "I am being bullied and I feel sad", type: "sent" },
-    {
-      text: "I am being bullied and I feel sad I am being bullied and I feel sad...",
-      type: "sent",
-    },
-    {
-      text: "I am being bullied and I feel sad I am being bullied and I feel sad...",
-      type: "sent",
-    },
-    {
-      text: "I am being bullied and I feel sad I am being bullied and I feel sad...",
-      type: "sent",
-    },
-    {
-      text: "I am being bullied and I feel sad I am being bullied and I feel sad...",
-      type: "sent",
-    },
-    {
-      text: "I am being bullied and I feel sad I am being bullied and I feel sad...",
-      type: "received",
-    },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
+    { user: "  ", text: "                         ", type: "received" },
   ]);
 
   const [userInput, setUserInput] = useState(""); // State to handle user input
