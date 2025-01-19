@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoginButton from "./auth0/login";
 import LogoutButton from "./auth0/logout";
 import PromptButton from "./components/PromptButton";
@@ -11,6 +11,40 @@ import ToolboxModal from "./components/ToolboxModal";
 import "./output.css";
 
 function App() {
+  const [count, setCount] = useState(0)
+  const [reply, setReply] = useState('')
+  const [isOpen, setOpen] = useState(false)
+  
+  // temp event handlers
+  const handleReplyChange = (e) => setReply(e.target.value)
+  const handleSubmit = (e) => {
+    console.log(reply)
+    setReply("")
+    e.preventDefault()
+  }
+
+  const handleClose = () => setOpen(false)
+
+  const [data, setData] = useState([{}])
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/chat", {
+        method: "POST",
+        body: JSON.stringify({"prompt": "hello, how are you"}),
+        headers: {
+          "Content-Type": "application/json",
+        }
+      }
+    ).then(
+      res => res.json()
+    ).then(
+      data => {
+        setData(data)
+        console.log(data)
+      }
+    )
+  }, [])
+  
   return (
     <div className="bg-pink1 h-screen w-screen flex flex-col">
       <div className="flex items-center justify-between px-10 py-4">
