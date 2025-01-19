@@ -6,7 +6,6 @@ import DropdownBtn from "./components/DropdownBtn";
 import Logo from "./components/Logo";
 import ChatWindow from "./components/ChatWindow";
 import SidebarLink from "./components/SidebarLink";
-import SidebarLink from "./components/SidebarLink";
 import InfoButton from "./components/InfoButton";
 import ToolboxModal from "./components/ToolboxModal";
 import "./output.css";
