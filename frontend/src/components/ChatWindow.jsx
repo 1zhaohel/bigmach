@@ -1,7 +1,9 @@
 import { useState } from "react";
 import TypingBox from './TypingBox';
 import PromptButton from './PromptButton';
+import { apiService } from "../apiService";
 
+// TODO: ChatWindow accepts JSON data from the AI's response and then formats it accordingly
 const ChatWindow = () => {
   const [messages] = useState([
     { user: "yiping", text: "Okay asduashdkjahsdka", type: "received" },
@@ -22,7 +24,44 @@ const ChatWindow = () => {
       text: "I am being bullied and I feel sad I am being bullied and I feel sad...",
       type: "sent",
     },
+    {
+      text: "I am being bullied and I feel sad I am being bullied and I feel sad...",
+      type: "received",
+    },
   ]);
+
+  const [userInput, setUserInput] = useState(""); // State to handle user input
+
+  const handleReplyChange = (e) => setUserInput(e.target.value); // Function to update user input
+
+  const handleSubmit = async () => {
+    if (userInput.trim() === "") return; // Prevent sending empty messages
+
+    // Add the user's message to the chat window
+    const newMessage = { text: userInput, type: "sent" };
+    // setMessages((prevMessages) => [...prevMessages, newMessage]);
+    messages.push(newMessage);
+
+    console.log("Submitted text:", newMessage);
+    setUserInput("");
+
+    try {
+      // Call the backend API to get the response
+      const response = await apiService.post({ prompt: userInput });
+
+      // Assuming the backend returns a response with the text
+      const botMessage = { text: response, type: "received" };
+      console.log("Response:", response);
+      // Add the backend response to the chat
+      // setMessages((prevMessages) => [...prevMessages, botMessage]);
+      messages.push(botMessage);
+
+      console.log("Retrieved text:", botMessage);
+
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+  };
 
   return (
     <div className="flex items-center justify-center w-5/6 h-[98%] rounded-[15px] border border-dashed border-pink5 shadow-lg bg-pink7">
@@ -40,8 +79,16 @@ const ChatWindow = () => {
             </div>
           ))}
         </div>
+
         <div className='flex items-center justify-center'>
-            <TypingBox />
+            <TypingBox 
+              // receiver="yiping"
+              value={userInput} // Passes the user input as a prop into TypingBox
+              handleReplyChange={handleReplyChange} // Passes the handleReplyChange function as a prop into TypingBox
+              handleSubmit={handleSubmit} // Passes the handleSubmit function as a prop into TypingBox
+              // setUserInput={setUserInput} // Func to update user input
+              // handleSendMessage={handleSendMessage} // Func to handle sending the message
+            />
         </div>
 
         <div className="flex justify-center space-x-4 px-4 py-4">
