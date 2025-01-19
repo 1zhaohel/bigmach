@@ -3,7 +3,8 @@ from flask_cors import CORS, cross_origin
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
-from GeminiAPI_DAO import GeminiAPI_DAO # use backend.GeminiAPI_DAP  when pushing to heroku
+# from GeminiAPI_DAO import GeminiAPI_DAO # use backend.GeminiAPI_DAP  when pushing to heroku
+from backend.GeminiAPI_DAO import GeminiAPI_DAO
 import json
 
 app = Flask(__name__)
@@ -26,7 +27,6 @@ def chat():
     response = jsonify(response)
 
     return response
-
 
 if __name__ == "__main__":
     app.run(debug=True)
