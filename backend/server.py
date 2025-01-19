@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 import os
 # from GeminiAPI_DAO import GeminiAPI_DAO # use backend.GeminiAPI_DAP  when pushing to heroku
-from backend.GeminiAPI_DAO import GeminiAPI_DAO
+from GeminiAPI_DAO import GeminiAPI_DAO
 import json
 
 app = Flask(__name__)

@@ -30,6 +30,40 @@ const ChatWindow = () => {
     },
   ]);
 
+      const action1 = async (type) => {
+
+        switch (type) {
+          
+          case "their-pov":
+            { console.log("Their pov...");
+              try {
+                // Call the backend API to get the response
+                const response = await apiService.post({ prompt: "The situation , tell me the perspective of the other person concisely so I can reflect and connect." });
+          
+                // Assuming the backend returns a response with the text
+                const botMessage = { text: response, type: "received" };
+                console.log("Response:", response);
+                // Add the backend response to the chat
+                setMessages((prevMessages) => [...prevMessages, botMessage]);
+                // messages.push(botMessage);
+          
+                console.log("Retrieved text:", botMessage);
+          
+              } catch (error) {
+                console.error("Error sending message:", error);
+              }break; }
+            
+          // case "outside-pov":
+          //   { console.log("Outside pov...");
+          //   const response = await apiService.post({ prompt: "Based on our recent conversation, please express how an objective outsider may feel about the situation, helping me reflect but make it concise."})
+          //   setOpen(true);
+          //   setResponse(response)
+          //   console.log("Response:", response);
+          //   break; }
+          default:
+            console.warn("Unknown action type:", type);
+        }
+      };
   const [userInput, setUserInput] = useState(""); // State to handle user input
 
   const handleReplyChange = (e) => setUserInput(e.target.value); // Function to update user input
@@ -49,7 +83,7 @@ const ChatWindow = () => {
 
     try {
       // Call the backend API to get the response
-      const response = await apiService.post({ prompt: userInput });
+      const response = await apiService.post({ prompt: "Based on our previous conversation, tell me the perspective of the other person concisely so I can reflect and relate." });
 
       // Assuming the backend returns a response with the text
       const botMessage = { text: response, type: "received" };
@@ -96,7 +130,7 @@ const ChatWindow = () => {
         <div className="flex justify-center space-x-4 px-4 py-4">
             <PromptButton
             btnText={"from their pov"}
-            btnCb={() => console.log("hello ;D")}
+            btnCb={() => action1("their-pov")}
             />
             <PromptButton
             btnText={"from an outsider's pov"}

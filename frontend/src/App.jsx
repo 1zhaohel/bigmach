@@ -6,7 +6,6 @@ import DropdownBtn from "./components/DropdownBtn";
 import Logo from "./components/Logo";
 import ChatWindow from "./components/ChatWindow";
 import SidebarLink from "./components/SidebarLink";
-import SidebarLink from "./components/SidebarLink";
 import InfoButton from "./components/InfoButton";
 import ToolboxModal from "./components/ToolboxModal";
 import "./output.css";
@@ -15,7 +14,8 @@ import { apiService } from "./apiService";
 function App() {
   const [reply, setReply] = useState('')
   const [isOpen, setOpen] = useState(false)
-
+  const [response, setResponse] = useState('')
+  
   const [selectedMode, setSelectedMode] = useState('cameron');  
   
   // const handlePovClick = (pov) => {
@@ -49,20 +49,48 @@ function App() {
     messages.push(response);
   }
     
-    const action = (type) => {
+    const action = async (type) => {
+
       switch (type) {
+        
         case "gen-draft":
           console.log("Generating a draft text message...");
-          apiService.post({ prompt: "Based on our recent conversation, please draft a considerate but concise text message to express my feelings." })
-          break;
+          { const response = await apiService.post({ prompt: "Based on our recent conversation, please draft a considerate but concise text message to express my feelings." })
+          setOpen(true);
+          setResponse(response)
+          console.log("Response:", response);
+          // setMessages((prevMessages) => [...prevMessages, botMessage]);
+          // messages.push(botMessage);
+    
+          break; }
         case "gen-summary":
           console.log("Generating takeaways...");
-          apiService.post({ prompt: "Based on our recent conversation, please summarize the takeaways from the situation for my further reflection."})
-          break;
+          { const response = await apiService.post({ prompt: "Based on our recent conversation, please summarize the takeaways from the situation for my further reflection."})
+          setOpen(true);
+          setResponse(response)
+          console.log("Response:", response);
+          break;}
         case "gen-actions":
-          console.log("Suggesting practical actions...");
-          apiService.post({ prompt:"Based on our recent conversation, please suggest actions I can take to address the situation." })
-          break;
+          { console.log("Suggesting practical actions...");
+          const response = await apiService.post({ prompt: "Based on our recent conversation, please generate actions I can take to address the situation."})
+          setOpen(true);
+          setResponse(response)
+          console.log("Response:", response);
+          break; }
+        case "their-pov":
+          { console.log("Their pov...");
+          const response = await apiService.post({ prompt: "Based on our recent conversation, please express how the other person may feel about the situation, helping me reflect but make it concise."})
+          setOpen(true);
+          setResponse(response)
+          console.log("Response:", response);
+          break; }
+          case "outside-pov":
+            { console.log("Outside pov...");
+            const response = await apiService.post({ prompt: "Based on our recent conversation, please express how an objective outsider may feel about the situation, helping me reflect but make it concise."})
+            setOpen(true);
+            setResponse(response)
+            console.log("Response:", response);
+            break; }
         default:
           console.warn("Unknown action type:", type);
       }
@@ -97,6 +125,8 @@ function App() {
           </div>
         </div>
         <ChatWindow />
+        <ToolboxModal isOpen={isOpen} onClose={handleClose}  content={response}/>
+
       </div>
       <div className="mb-1">
         <p className="italic text-sm text-center text-gray1">heart2heart is designed to provide general guidance and support. It is not a substitute for professional mental health care or advice. Your safety and well-being are of utmost importance.</p>

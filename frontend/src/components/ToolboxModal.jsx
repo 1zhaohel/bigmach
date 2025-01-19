@@ -1,11 +1,10 @@
-function ToolboxModal({ isOpen, onClose, title, content}) {
+function ToolboxModal({ isOpen, onClose, content}) {
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-25">
       <div className="bg-pink4 rounded-lg shadow-lg w-2/3 p-6">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-semibold">{title}</h2>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 focus:outline-none"
