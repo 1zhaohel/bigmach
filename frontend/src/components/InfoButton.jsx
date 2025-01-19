@@ -4,20 +4,18 @@ export default function InfoButton() {
   return (
     <Tooltip
       content={
-        <div className="w-80 bg-white p-2 rounded shadow-md">
-          <Typography color="black" className="font-bold">
-            Choose your therapist!
+        <div className="w-80 p-2 rounded shadow-md">
+          <Typography color="black" className="font-semibold opacity-95">
+            talk from your heart with...
           </Typography>
           <Typography
             variant="small"
             color="black"
-            className="font-normal opacity-80"
+            className="font-medium opacity-70"
           >
-            Joe is a logical and solution-oriented guy.
-            Bob is a idk idk idk.
-            
-            Chloe is a nice friend.
-
+            cameron (balanced): like a therapist <br />
+            taylor (logical): your voice of reason <br />
+            yiping (emotional): a supportive friend <br />
           </Typography>
         </div>
       }
@@ -26,7 +24,7 @@ export default function InfoButton() {
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        stroke="currentColor"
+        stroke="#534F4F"
         strokeWidth={2}
         className="h-5 w-5 cursor-pointer text-blue-gray-500"
       >
