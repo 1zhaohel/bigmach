@@ -3,7 +3,7 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
-import GeminiAPI_DAO
+from backend.GeminiAPI_DAO import GeminiAPI_DAO
 import json
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def chat():
 
     json_data = json.loads(decoded_data)
     
-    test = GeminiAPI_DAO.GeminiAPI_DAO("therapist") # TODO: make this dynamic
+    test = GeminiAPI_DAO("therapist") # TODO: make this dynamic
     response = test.prompt_AI(json_data["prompt"])
 
     return json.dumps(response)
