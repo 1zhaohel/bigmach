@@ -5,7 +5,7 @@ import PromptButton from "./components/PromptButton";
 import DropdownBtn from "./components/DropdownBtn";
 import Logo from "./components/Logo";
 import ChatWindow from "./components/ChatWindow";
-// import SidebarLink from "./components/SidebarLink";
+import SidebarLink from "./components/SidebarLink";
 import InfoButton from "./components/InfoButton";
 import ToolboxModal from "./components/ToolboxModal";
 import "./output.css";
@@ -66,9 +66,9 @@ function App() {
           
           <div className="bg-gray2 p-4 rounded-[15px] shadow-md w-52 ">
             <h3 className="mb-2 text-gray1">TOOLBOX</h3>
-            {/* <SidebarLink text="draft text message" onClick={() => alert('Draft clicked!')} />
+            <SidebarLink text="draft text message" onClick={() => alert('Draft clicked!')} />
             <SidebarLink text="generate takeaways" onClick={() => alert('Generate clicked!')} />
-            <SidebarLink text="suggest actions" onClick={() => alert('Suggest clicked!')} /> */}
+            <SidebarLink text="suggest actions" onClick={() => alert('Suggest clicked!')} />
           </div>
         </div>
         <ChatWindow />
