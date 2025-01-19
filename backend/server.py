@@ -9,6 +9,7 @@ import json
 
 app = Flask(__name__)
 CORS(app) #, resources={r"/*": {"origins": ["http://localhost:5173"]}})
+test = GeminiAPI_DAO("therapist")
 
 @app.route("/chat", methods=["POST", "OPTIONS"])
 # @cross_origin()
@@ -22,11 +23,13 @@ def chat():
 
     json_data = json.loads(decoded_data)
     
-    test = GeminiAPI_DAO("therapist")
     response = test.prompt_AI(json_data["prompt"])
     response = jsonify(response)
 
     return response
+
+
+    
 
 
 if __name__ == "__main__":
