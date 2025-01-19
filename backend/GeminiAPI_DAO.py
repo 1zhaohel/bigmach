@@ -14,8 +14,6 @@ class GeminiAPI_DAO:
         # Load API key from .env.local file
         load_dotenv('.env')
         self.gemini_api_key = os.getenv('GEMINI_API_KEY')
-        # self.gemini_api_key = "AIzaSyAG-gtfe9S7jkfm3RiX_uDOgUvrIrnUD9o"
-
 
         print(self.gemini_api_key)
 
