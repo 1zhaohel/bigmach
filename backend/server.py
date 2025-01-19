@@ -1,15 +1,16 @@
 from flask import Flask, jsonify, request
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
-from backend.GeminiAPI_DAO import GeminiAPI_DAO # use this when pushing to heroku
+from GeminiAPI_DAO import GeminiAPI_DAO # use backend.GeminiAPI_DAP  when pushing to heroku
 import json
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": ["http://localhost:5173"]}})
 
 @app.route("/chat", methods=["POST", "OPTIONS"])
+# @cross_origin()
 def chat():
     if request.method == "OPTIONS":
         # Handle preflight request (respond to OPTIONS request)
