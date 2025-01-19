@@ -9,7 +9,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/chat", methods=["POST"])
+@app.route("/chat", methods=["GET"])
 def chat():
     # raw_data = request.data
     # decoded_data = raw_data.decode('utf-8')
