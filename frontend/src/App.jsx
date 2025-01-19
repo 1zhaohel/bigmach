@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import LoginButton from './auth0/login'
 import LogoutButton from './auth0/logout'
 import SwitchPovBtn from './components/PromptButton'
@@ -23,6 +23,27 @@ function App() {
   }
 
   const handleClose = () => setOpen(false)
+
+  const [data, setData] = useState([{}])
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/chat", {
+        method: "POST",
+        body: JSON.stringify({"prompt": "hello, how are you"}),
+        headers: {
+          "Content-Type": "application/json",
+        }
+      }
+    ).then(
+      res => res.json()
+    ).then(
+      data => {
+        setData(data)
+        console.log(data)
+      }
+    )
+  }, [])
+  
 
   return (
     <>

@@ -26,5 +26,11 @@ dist-ssr
 *.sw?
 
 # Enviromental Files (API Key)
+.env
 .env.local
+
+# Frontend
 frontend/src/output.css
+
+# Backend
+backend/__pycache__/
