@@ -45,6 +45,7 @@ function App() {
     )
   }, [])
   
+
   return (
     <div className="bg-pink1 h-screen w-screen flex flex-col">
       <div className="flex items-center justify-between px-10 py-4">
