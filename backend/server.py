@@ -11,13 +11,14 @@ CORS(app)
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    raw_data = request.data
-    decoded_data = raw_data.decode('utf-8')
+    # raw_data = request.data
+    # decoded_data = raw_data.decode('utf-8')
 
-    json_data = json.loads(decoded_data)
+    # json_data = json.loads(decoded_data)
     
-    test = GeminiAPI_DAO("therapist") # TODO: make this dynamic
-    response = test.prompt_AI(json_data["prompt"])
+    # test = GeminiAPI_DAO("therapist") # TODO: make this dynamic
+    # response = test.prompt_AI(json_data["prompt"])
+    response = {{"message":"success!" }}
 
     return json.dumps(response)
 
