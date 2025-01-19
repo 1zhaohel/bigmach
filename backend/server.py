@@ -20,7 +20,7 @@ def chat():
     # response = test.prompt_AI(json_data["prompt"])
     response = jsonify({"message":"success!" })
 
-    return json.dumps(response)
+    return response
 
 
 if __name__ == "__main__":
