@@ -32,15 +32,20 @@ function App() {
   const handleClose = () => setOpen(false)
   const handleModeChange = (newMode) => setSelectedMode(newMode)
 
-  // const fetchResponse = async (prompt) => {
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve({user: "AI", text: "Echo: ${userInput}"});
-  //     }, 1000);
-  //   });
-  // };
+  const fetchResponse = async (prompt) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({user: "AI", text: "Echo: ${userInput}"});
+      }, 1000);
+    });
+  };
 
-  // const handleNewMessage = async (userInput) => {
+  const handleNewMessage = async (userInput) => {
+    // messages = [];
+    messages.push({text: userInput, type: "sent"});
+    const response = await fetchResponse(userInput);
+    messages.push(response);
+  }
     
 
 
