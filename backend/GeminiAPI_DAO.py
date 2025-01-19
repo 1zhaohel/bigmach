@@ -61,6 +61,20 @@ class GeminiAPI_DAO:
         print(self.chat.history)
 
 
+    # def actions(value):
+    #     if value == "their_pov":
+    #         response = self.chat.send_message("Please express the situation from the other person's perspective.")
+
+    #     elif value == 
+
+    #     elif value == "draft_message":
+    #         ("Based on our recent conversation, please draft a considerate but concise text message to express my feelings.")
+    #     elif value == "summarize":
+    #         ()
+
+    #     elif value == "suggest_action":
+    #         ("Based on our recent conversation, please suggest actions I can take to address the situation.")
+
 
 # Defining main function
 def main():
@@ -94,6 +108,7 @@ def main():
         inSession = input("Would you like to start a therapy session? (y/n)")
     
     print("Goodbye!")
+
 
 # Using the special variable 
 # __name__

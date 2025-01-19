@@ -6,9 +6,11 @@ import DropdownBtn from "./components/DropdownBtn";
 import Logo from "./components/Logo";
 import ChatWindow from "./components/ChatWindow";
 import SidebarLink from "./components/SidebarLink";
+import SidebarLink from "./components/SidebarLink";
 import InfoButton from "./components/InfoButton";
 import ToolboxModal from "./components/ToolboxModal";
 import "./output.css";
+import { apiService } from "./apiService";
 
 function App() {
   const [reply, setReply] = useState('')
@@ -47,7 +49,25 @@ function App() {
     messages.push(response);
   }
     
-
+    const action = (type) => {
+      switch (type) {
+        case "gen-draft":
+          console.log("Generating a draft text message...");
+          apiService.post({ prompt: "Based on our recent conversation, please draft a considerate but concise text message to express my feelings." })
+          break;
+        case "gen-summary":
+          console.log("Generating takeaways...");
+          apiService.post({ prompt: "Based on our recent conversation, please summarize the takeaways from the situation for my further reflection."})
+          break;
+        case "gen-actions":
+          console.log("Suggesting practical actions...");
+          apiService.post({ prompt:"Based on our recent conversation, please suggest actions I can take to address the situation." })
+          break;
+        default:
+          console.warn("Unknown action type:", type);
+      }
+    };
+  
 
   return (
     <div className="bg-pink1 h-screen w-screen flex flex-col">
@@ -71,9 +91,9 @@ function App() {
           
           <div className="bg-gray2 p-4 rounded-[15px] shadow-md w-52 ">
             <h3 className="mb-2 text-gray1">TOOLBOX</h3>
-            <SidebarLink text="draft text message" onClick={() => alert('Draft clicked!')} />
-            <SidebarLink text="generate takeaways" onClick={() => alert('Generate clicked!')} />
-            <SidebarLink text="suggest actions" onClick={() => alert('Suggest clicked!')} />
+            <SidebarLink text="draft text message" onClick={() => action('gen-draft')} />
+            <SidebarLink text="generate takeaways" onClick={() => action('gen-summary')} />
+            <SidebarLink text="suggest actions" onClick={() => action('gen-actions')} />
           </div>
         </div>
         <ChatWindow />
