@@ -18,7 +18,7 @@ def chat():
     
     # test = GeminiAPI_DAO("therapist") # TODO: make this dynamic
     # response = test.prompt_AI(json_data["prompt"])
-    response = jsonify({{"message":"success!" }})
+    response = jsonify({"message":"success!" })
 
     return json.dumps(response)
 
