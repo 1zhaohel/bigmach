@@ -17,7 +17,9 @@ conflicts with a loved one are overwhelming! emotions can cloud your judgment, m
 to build our project, we used:
 
 frontend: react, vite, jsx, tailwind css
+
 backend: flask (python)
+
 hosting: netlify, heroku
 
 
