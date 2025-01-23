@@ -25,35 +25,41 @@ const [userInput, setUserInput] = useState(""); // State to handle user input
 const handleReplyChange = (e) => setUserInput(e.target.value); // Function to update user input
 
 const handleSubmit = async () => {
-if (userInput.trim() === "") return; // Prevent sending empty messages
+  if (userInput.trim() === "") return; // Prevent sending empty messages
 
-// Add the user's message to the chat window
-const newMessage = { text: userInput, type: "sent" };
-// setMessages((prevMessages) => [...prevMessages, newMessage]);
-// messages.push(newMessage);
+  const newMessage = { text: userInput, type: "sent" };
+  setMessages((prevMessages) => [...prevMessages, newMessage]);
+  setUserInput("");
 
-// console.log("Submitted text:", newMessage);
-// setUserInput("");
-setMessages((prevMessages) => [...prevMessages, newMessage]);
-setUserInput("");
+  try {
+    const response = await apiService.post({ prompt: userInput });
+    const botMessage = { text: response, type: "received" };
 
-try {
-  // Call the backend API to get the response
-  const response = await apiService.post({ prompt: userInput });
+    setMessages((prevMessages) => [...prevMessages, botMessage]);
 
-  // Assuming the backend returns a response with the text
-  const botMessage = { text: response, type: "received" };
-  console.log("Response:", response);
-  // Add the backend response to the chat
-  setMessages((prevMessages) => [...prevMessages, botMessage]);
-  // messages.push(botMessage);
-
-  console.log("Retrieved text:", botMessage);
-
-} catch (error) {
-  console.error("Error sending message:", error);
-}
+  } catch (error) {
+    console.error("Error sending message:", error);
+  }
 };
+
+const handlePovClick = async (povType) => {
+  var prompt
+  if (povType == "their-pov") {
+    prompt = "Based on our recent conversation, please express how the other person may feel about the situation, helping me reflect but make it concise."
+  } else if ( povType == "outside-pov") {
+    prompt = "Based on our recent conversation, please express how an objective outsider may feel about the situation, helping me reflect but make it concise."
+  }
+
+  try {
+    const response = await apiService.post({ prompt: prompt });
+    const botMessage = { text: response, type: "received" };
+
+    setMessages((prevMessages) => [...prevMessages, botMessage]);
+
+  } catch (error) {
+    console.error("Error sending message:", error);
+  }
+}
 
 return (
 <div className="flex items-center justify-center w-5/6 h-[98%] rounded-[15px] border border-dashed border-pink5 shadow-lg bg-pink7">
@@ -86,11 +92,11 @@ return (
     <div className="flex justify-center space-x-4 px-4 py-4">
         <PromptButton
         btnText={"from their pov"}
-        btnCb={() => console.log("hello ;D")}
+        btnCb={() => handlePovClick("their-pov")}
         />
         <PromptButton
         btnText={"from an outsider's pov"}
-        btnCb={() => console.log("hello ;D")}
+        btnCb={() => handlePovClick("outside-pov")}
         />
     </div>
 

@@ -32,7 +32,10 @@ function App() {
   // }
 
   const handleClose = () => setOpen(false)
-  const handleModeChange = (newMode) => setSelectedMode(newMode)
+  const handleModeChange = (newMode) => {
+    
+    setSelectedMode(newMode)
+  }
 
   const fetchResponse = async (prompt) => {
     return new Promise((resolve) => {
@@ -49,52 +52,26 @@ function App() {
     messages.push(response);
   }
     
-    const action = async (type) => {
+const action = async (type) => {
+  var prompt
+  switch (type) {
 
-      switch (type) {
-        
-        case "gen-draft":
-          console.log("Generating a draft text message...");
-          { const response = await apiService.post({ prompt: "Based on our recent conversation, please draft a considerate but concise text message to express my feelings." })
-          setOpen(true);
-          setResponse(response)
-          console.log("Response:", response);
-          // setMessages((prevMessages) => [...prevMessages, botMessage]);
-          // messages.push(botMessage);
-    
-          break; }
-        case "gen-summary":
-          console.log("Generating takeaways...");
-          { const response = await apiService.post({ prompt: "Based on our recent conversation, please summarize the takeaways from the situation for my further reflection."})
-          setOpen(true);
-          setResponse(response)
-          console.log("Response:", response);
-          break;}
-        case "gen-actions":
-          { console.log("Suggesting practical actions...");
-          const response = await apiService.post({ prompt: "Based on our recent conversation, please generate actions I can take to address the situation."})
-          setOpen(true);
-          setResponse(response)
-          console.log("Response:", response);
-          break; }
-        case "their-pov":
-          { console.log("Their pov...");
-          const response = await apiService.post({ prompt: "Based on our recent conversation, please express how the other person may feel about the situation, helping me reflect but make it concise."})
-          setOpen(true);
-          setResponse(response)
-          console.log("Response:", response);
-          break; }
-          case "outside-pov":
-            { console.log("Outside pov...");
-            const response = await apiService.post({ prompt: "Based on our recent conversation, please express how an objective outsider may feel about the situation, helping me reflect but make it concise."})
-            setOpen(true);
-            setResponse(response)
-            console.log("Response:", response);
-            break; }
-        default:
-          console.warn("Unknown action type:", type);
-      }
-    };
+    case "gen-draft":
+      prompt = "Based on our recent conversation, please draft a considerate but concise text message to express my feelings." 
+      break; 
+
+    case "gen-summary":
+      prompt = "Based on our recent conversation, please summarize the takeaways from the situation for my further reflection."
+      break;
+    case "gen-actions":
+      prompt = "Based on our recent conversation, please generate actions I can take to address the situation."
+      break;
+  }
+
+  const response = await apiService.post({ prompt: prompt })
+  setOpen(true);
+  setResponse(response)
+};
   
 
   return (
