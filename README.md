@@ -1,4 +1,5 @@
-# welcome to heart2heart!
+# welcome to heart2heart! 
+*a UofT Hacks submission*
 
 ## what is heart2heart?
 
